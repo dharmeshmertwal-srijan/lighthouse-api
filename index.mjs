@@ -43,6 +43,7 @@ app.get("/lighthouse-dynamic",function(req,response){
   (async () => {
     const browser = await puppeteer.launch({
         headless: false,
+        executablePath: '/usr/bin/chromium-browser',
         slowMo: 50,
     });
     const page = await browser.newPage();
