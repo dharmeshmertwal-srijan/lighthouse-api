@@ -42,8 +42,9 @@ app.get("/lighthouse-dynamic",function(req,response){
   var password = data.password;
   (async () => {
     const browser = await puppeteer.launch({
-        headless: false,
-        slowMo: 50,
+      headless: true,
+      executablePath: '/usr/bin/google-chrome',
+      slowMo: 50,
     });
     const page = await browser.newPage();
     await login(page, urlLogin,username,password);
